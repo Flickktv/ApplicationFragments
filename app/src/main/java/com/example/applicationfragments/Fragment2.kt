@@ -30,6 +30,10 @@ class Fragment2 : Fragment(R.layout.fragment_2) {
         dataEvent.email.observe(activity as LifecycleOwner, {
             email.text = it
         })
+        val bnFragment2 = requireActivity().findViewById<Button>(R.id.bnFragment2)
+        bnFragment2.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.container, Fragment1()).commit()
+        }
 
     }
 }
